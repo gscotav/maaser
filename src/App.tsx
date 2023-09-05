@@ -1,35 +1,56 @@
+// @ts-nocheck
+
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [money, setMoney] = useState('');
+
+  let feedback = '';
+  if (count < 0) {
+    feedback = 'tzeduka';
+  } else {
+    feedback = 'massir';
+  }
+
+  let result = '';
+  if (count < 0) {
+    result = Math.abs(count);
+  } else {
+    result = count;
+  }
 
   return (
-    <>
+    <div>
+      <h1>massir cheshbon</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setCount((count) => count - money)}>
+          tzeduka
+        </button>
+        <> $</>
+
+        <input
+          value={money}
+          onChange={(e) => setMoney (e.target.value)}
+          placeholder="Enter your earnings or tzeduka"
+          style={{
+            whiteSpace: 'nowrap',
+            width: '185px',
+          }}
+        />
+        
+        <button onClick={() => setCount((count) => count +  money / 10)}>
+          massir
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Your {feedback}: ${Math.ceil(result)}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
+
 
 export default App
