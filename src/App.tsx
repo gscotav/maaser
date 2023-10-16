@@ -12,7 +12,7 @@ function App() {
   if (count < 0) {
     feedback = 'tzeduka';
   } else {
-    feedback = 'massir';
+    feedback = 'maaser';
   }
 
   let result = '';
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <h1>massir cheshbon</h1>
+      <h1>maaser cheshbon</h1>
       <div>
         <button onClick={() => setCount((count) => count - money)}>
           tzeduka
@@ -42,7 +42,7 @@ function App() {
         />
         
         <button onClick={() => setCount((count) => count +  money / 10)}>
-          massir
+          maaser
         </button>
         <p>
           Your {feedback}: ${Math.ceil(result)}
