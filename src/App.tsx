@@ -4,6 +4,11 @@
 import { useState } from 'react'
 import './App.css'
 
+import { USD } from '@dinero.js/currencies';
+
+
+
+
 function App() {
   const [count, setCount] = useState(0);
   const [money, setMoney] = useState('');
