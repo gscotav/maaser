@@ -3,9 +3,6 @@
 
 import { useState } from 'react'
 import './App.css'
-import { Dinero } from '@dinero.js/core';
-import { USD } from '@dinero.js/currencies';
-
 
 
 
