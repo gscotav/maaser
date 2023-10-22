@@ -3,6 +3,7 @@
 
 import { useState } from 'react'
 import './App.css'
+import accounting from 'accounting';
 
 
 
@@ -31,7 +32,7 @@ function App() {
         <button onClick={() => setCount((count) => count - money)}>
           tzeduka
         </button>
-        <> $</>
+        <> </>
 
         <input
           value={money}
@@ -47,7 +48,7 @@ function App() {
           maaser
         </button>
         <p>
-          Your {feedback}: ${Math.ceil(result)}
+          Your {feedback}: {accounting.formatMoney(result, '$')}
         </p>
       </div>
     </div>
