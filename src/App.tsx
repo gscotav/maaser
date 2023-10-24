@@ -1,14 +1,17 @@
 // @ts-nocheck
 
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import './App.css'
 import accounting from 'accounting';
 
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  const savedResult = localStorage.getItem('result');
+  const initialResult = savedResult ? parseFloat(savedResult) : 0;
+
+  const [count, setCount] = useState(initialResult);
   const [money, setMoney] = useState('');
 
   let feedback = '';
@@ -24,6 +27,12 @@ function App() {
   } else {
     result = count;
   }
+
+  const handleSave = () => {
+    localStorage.setItem('result', result.toString());
+  };
+
+  
 
   return (
     <div>
@@ -50,6 +59,14 @@ function App() {
         <p>
           Your {feedback}: {accounting.formatMoney(result, '$')}
         </p>
+        <button onClick={handleSave}>
+          save
+        </button><button
+        onClick={() => {
+          setCount(0)
+        }}>
+          reset
+        </button>
       </div>
     </div>
   );
