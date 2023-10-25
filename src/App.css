@@ -46,39 +46,73 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: linear-gradient(to right, #a8caba, #5d4157);
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
-.buttons-container {
+.title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.button-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.action-button,
+.save-button,
+.reset-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #78c2ad;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px #999;
+  transition: all 0.3s;
+}
+
+.action-button:hover,
+.save-button:hover,
+.reset-button:hover {
+  background-color: #95d5bd;
+  box-shadow: 0 2px #666;
+}
+
+.action-button:active,
+.save-button:active,
+.reset-button:active {
+  transform: translateY(4px);
+  box-shadow: none;
 }
 
 .money-input {
-  white-space: nowrap;
-  width: 185px;
-  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 186px;
 }
 
 .result {
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.save-button,
-.reset-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #4caf50;
+  font-size: 1.5em;
+  margin: 20px 0;
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  text-shadow: 2px 2px 4px #000000;
 }
-
 .save-button {
-  margin-right: 10px;
+  margin-right: 10px; 
 }
 
 .reset-button {
-  background-color: #f44336;
+  margin-left: 10px; 
 }
+
+
