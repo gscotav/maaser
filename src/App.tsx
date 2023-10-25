@@ -32,6 +32,11 @@ function App() {
     localStorage.setItem('result', result.toString());
   };
 
+  useEffect(() => {
+    handleSave();
+  }, [result]);
+
+
   
 
   return (
@@ -63,9 +68,11 @@ function App() {
           save
         </button><button
         onClick={() => {
-          if (window.confirm('Are you sure you want to reset?'))
-          setCount(0)
-        }}>
+          if (window.confirm('Are you sure you want to reset?')) 
+            { setCount(0);
+            handleSave(); }
+        }}
+        >
           reset
         </button>
       </div>
