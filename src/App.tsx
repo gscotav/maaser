@@ -43,7 +43,10 @@ function App() {
     <div className="container">
     <h1 className="title">מעשר חשבון</h1>
     <div className="button-container">
-      <button className="action-button" onClick={() => setCount((count) => count - money)}>
+      <button className="action-button" onClick={() =>  {
+    setCount((count) => count - money);
+    setMoney(''); 
+  }}>
         צדקה
       </button>
       <input
@@ -52,7 +55,9 @@ function App() {
         placeholder="Enter your ernings or Tzedukah"
         className="money-input"
       />
-      <button className="action-button" onClick={() => setCount((count) => count + money / 10)}>
+      <button className="action-button" onClick={() => {
+         setCount((count) => count + money / 10);
+         setMoney('');}}>
         מעשר
       </button>
     </div>
