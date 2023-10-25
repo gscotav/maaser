@@ -16,9 +16,9 @@ function App() {
 
   let feedback = '';
   if (count < 0) {
-    feedback = 'tzeduka';
+    feedback = 'צדקה';
   } else {
-    feedback = 'maaser';
+    feedback = 'מעשׂר';
   }
 
   let result = '';
@@ -41,10 +41,10 @@ function App() {
 
   return (
     <div>
-      <h1>maaser cheshbon</h1>
+      <h1>מעשׂר חשבון</h1>
       <div>
         <button onClick={() => setCount((count) => count - money)}>
-          tzeduka
+        צדקה
         </button>
         <> </>
 
@@ -59,10 +59,10 @@ function App() {
         />
         
         <button onClick={() => setCount((count) => count +  money / 10)}>
-          maaser
+        מעשׂר
         </button>
         <p>
-          Your {feedback}: {accounting.formatMoney(result, '$')}
+           {feedback}: {accounting.formatMoney(result, '$')}
         </p>
         <button onClick={handleSave}>
           save
