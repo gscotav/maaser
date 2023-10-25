@@ -63,6 +63,7 @@ function App() {
           save
         </button><button
         onClick={() => {
+          if (window.confirm('Are you sure you want to reset?'))
           setCount(0)
         }}>
           reset
