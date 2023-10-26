@@ -8,7 +8,7 @@ import accounting from 'accounting';
 
 
 function App() {
-  const savedResult = localStorage.getItem('result');
+  const savedResult = localStorage.getItem('count');
   const initialResult = savedResult ? parseFloat(savedResult) : 0;
 
   const [count, setCount] = useState(initialResult);
@@ -18,7 +18,7 @@ function App() {
   if (count < 0) {
     feedback = 'צדקה';
   } else {
-    feedback = 'מעשׂר';
+    feedback = 'מעשר';
   }
 
   let result = '';
@@ -29,21 +29,21 @@ function App() {
   }
 
   const handleSave = () => {
-    localStorage.setItem('result', result.toString());
+    localStorage.setItem('count', count.toString());
   };
-
+ 
+  const handleReset = () => {
+    setCount(0)
+  };
   useEffect(() => {
     handleSave();
-  }, [result]);
-
-
+  }, [handleReset]);
   
-
   return (
     <div className="container">
     <h1 className="title">מעשר חשבון</h1>
     <div className="button-container">
-      <button className="action-button" onClick={() =>  {
+      <button className="tzedukah-button" onClick={() =>  {
     setCount((count) => count - money);
     setMoney(''); 
   }}>
@@ -52,10 +52,10 @@ function App() {
       <input
         value={money}
         onChange={(e) => setMoney(e.target.value)}
-        placeholder="Enter your ernings or Tzedukah"
+        placeholder="Enter your earnings or Tzedakah"
         className="money-input"
       />
-      <button className="action-button" onClick={() => {
+      <button className="maaser-button" onClick={() => {
          setCount((count) => count + money / 10);
          setMoney('');}}>
         מעשר
@@ -71,10 +71,8 @@ function App() {
     <button
       className="reset-button"
       onClick={() => {
-        if (window.confirm('Are you sure you want to reset?')) {
-          setCount(0);
-          handleSave();
-        }
+        if (window.confirm('Are you sure you want to reset?')) 
+          {handleReset();}
       }}
     >
       reset
