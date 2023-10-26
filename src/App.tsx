@@ -15,10 +15,14 @@ function App() {
   const [money, setMoney] = useState('');
 
   let feedback = '';
+  let feedbackClass = '';
+
   if (count < 0) {
     feedback = 'צדקה';
+    feedbackClass = 'tzedakahClass';
   } else {
     feedback = 'מעשר';
+    feedbackClass = 'maaserClass';
   }
 
   let result = '';
@@ -61,7 +65,7 @@ function App() {
         מעשר
       </button>
     </div>
-    <p className="result">
+    <p id="feedbackid" className={feedbackClass}>
       {feedback}: {accounting.formatMoney(result, '$')}
     </p>
     <div>

@@ -65,6 +65,7 @@
   border-radius: 5px;
   box-shadow: 0 4px #999;
   transition: all 0.3s;
+  margin-right: 10px;
 }
 .reset-button {
   padding: 10px 20px;
@@ -76,6 +77,7 @@
   border-radius: 5px;
   box-shadow: 0 4px #999;
   transition: all 0.3s;
+  margin-left: 10px;
 }
 .maaser-button:hover,
 .tzedukah-button:hover,
@@ -102,18 +104,18 @@
   width: 194px;
 }
 
-.result {
+
+.maaserClass{font-size: 1.5em;
+  margin: 20px 0;
+  color: #ff002b;
+  
+}
+.tzedakahClass{
   font-size: 1.5em;
   margin: 20px 0;
-  color: #fff;
-  text-shadow: 2px 2px 4px #000000;
-}
-.save-button {
-  margin-right: 10px; 
+  color: #10cf7c;
+  
 }
 
-.reset-button {
-  margin-left: 10px; 
-}
 
 
