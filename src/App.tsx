@@ -35,13 +35,27 @@ function App() {
   const handleSave = () => {
     localStorage.setItem('count', count.toString());
   };
+  useEffect(() => {
+    if (count === 0) {
+      handleSave();
+    }
+  }, []);
+  let zero = '';
+  if (count === 0) {
+   zero = handleSave();
+  }
  
   const handleReset = () => {
-    setCount(0)
+    setCount(0);
+    handleSave();
+    zero()
   };
   useEffect(() => {
-    handleSave();
-  }, [handleReset]);
+    if (count === 0) {
+      handleSave();
+    }
+  }, []);
+  
   
   return (
     <div className="container">

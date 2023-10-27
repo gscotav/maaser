@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to right, #c3d7df, #de9acf);
+  background: linear-gradient(to right, #c3d7df, #c992bd);
   font-family: Arial, sans-serif;
   color: #333;
 }
@@ -34,7 +34,7 @@
 .tzedukah-button{  
   padding: 10px 20px;
   border: none;
-  background-color: #10cf7c;
+  background-color: #0d7d6d;
   color: white;
   font-size: 1em;
   cursor: pointer;
@@ -46,7 +46,7 @@
 .maaser-button{  
   padding: 10px 20px;
   border: none;
-  background-color: #ff002b;
+  background-color: #d21730;
   color: white;
   font-size: 1em;
   cursor: pointer;
@@ -107,13 +107,13 @@
 
 .maaserClass{font-size: 1.5em;
   margin: 20px 0;
-  color: #ff002b;
+  color: #d21730;
   font-family: narkism;
 }
 .tzedakahClass{
   font-size: 1.5em;
   margin: 20px 0;
-  color: #10cf7c;
+  color: #0d7d6d;
   font-family: narkism;
 }
 
