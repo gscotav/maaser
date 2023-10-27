@@ -35,11 +35,7 @@ function App() {
   const handleSave = () => {
     localStorage.setItem('count', count.toString());
   };
-  useEffect(() => {
-    if (count === 0) {
-      handleSave();
-    }
-  }, []);
+
   let zero = '';
   if (count === 0) {
    zero = handleSave();
@@ -47,16 +43,10 @@ function App() {
  
   const handleReset = () => {
     setCount(0);
-    handleSave();
+   
     zero()
   };
-  useEffect(() => {
-    if (count === 0) {
-      handleSave();
-    }
-  }, []);
-  
-  
+ 
   return (
     <div className="container">
     <h1 className="title">מעשר חשבון</h1>
