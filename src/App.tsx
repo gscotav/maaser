@@ -64,6 +64,7 @@ function App() {
         onChange={(e) => setMoney(e.target.value)}
         placeholder="Enter your earnings or Tzedakah"
         className="money-input"
+        type="number"
       />
       <button className="maaser-button" onClick={() => {
          setCount((count) => count + money / 10);
