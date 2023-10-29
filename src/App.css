@@ -96,12 +96,17 @@
   box-shadow: none;
   transition: transform 0.3s, box-shadow 0.3s, background-color 0s;
 }
+
 .money-input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 194px;
   -moz-appearance: textfield;
+}
+
+.money-input::-webkit-outer-spin-button,
+.money-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
