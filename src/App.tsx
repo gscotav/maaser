@@ -18,12 +18,14 @@ function App() {
   let feedbackCss = '';
 
   if (count < 0) {
-    feedback = 'צדקה';
+    feedback = 'צדקה :';
     feedbackCss = 'tzedakahCss';
-  } else {
-    feedback = 'מעשר';
+  }  else if (count > 0) {
+    feedback = 'מעשר :';
     feedbackCss = 'maaserCss';
-  }
+  } else {
+    feedback = ''; 
+    feedbackCss = 'noCss';}
 
   let result = '';
   if (count < 0) {
@@ -70,7 +72,7 @@ function App() {
       </button>
     </div>
     <p id="feedbackid" className={feedbackCss}>
-      {feedback}: {accounting.formatMoney(result, '$')}
+      {feedback} {accounting.formatMoney(result, '$')}
     </p>
     <div>
     <button className="save-button" onClick={handleSave}>
