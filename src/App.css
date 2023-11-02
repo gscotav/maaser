@@ -79,6 +79,8 @@
   transition: all 0.3s;
   margin-left: 10px;
 }
+
+.edit-button:hover,
 .maaser-button:hover,
 .tzedukah-button:hover,
 .save-button:hover,
@@ -88,6 +90,7 @@
   
 }
 
+.edit-button:active,
 .maaser-button:active,
 .tzedukah-button:active,
 .save-button:active,
@@ -182,6 +185,13 @@
   background-color: #0e46be;
   color: #fff;
   margin-right: 30px; 
+  padding: 10px 20px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px #999;
+  transition: all 0.3s;
 }
 
 .lock {
