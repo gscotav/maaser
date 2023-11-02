@@ -1,11 +1,10 @@
 // @ts-nocheck
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import './App.css'
 import accounting from 'accounting';
-
-
+                     
 
 function App() {
   const savedResult = localStorage.getItem('count');
@@ -13,10 +12,12 @@ function App() {
 
   const [count, setCount] = useState(initialResult);
   const [money, setMoney] = useState('');
+  const [edit, setEdit] = useState(false);   
+  const [edit2, setEdit2] = useState('')
+  const [saver, setSaver] = useState(false)
 
   let feedback = '';
-  let feedbackCss = '';
-
+  let feedbackCss = '';                                                                                         
   if (count < 0) {
     feedback = 'צדקה :';
     feedbackCss = 'tzedakahCss';
@@ -34,24 +35,62 @@ function App() {
     result = count;
   }
 
+let lock = '';
+if (edit !== false) {
+  lock = 'lock';
+}
+
+  let fund = accounting.formatMoney(result, '$')
+
   const handleSave = () => {
     localStorage.setItem('count', count.toString());
   };
 
+  
+
   let zero = '';
-  if (count === 0) {
+  if (count === 0 && saver === true) {
    zero = handleSave();
+   setSaver(false)
   }
  
   const handleReset = () => {
     setCount(0);
-   
-    zero()
+    setSaver(true)
   };
+
+  const handleEdit = () => { 
+  setEdit(true)
+
+} 
+
+let timer = '';
+if (0-edit2) {
+  timer = handleSave();
+}
+
+
+const saveAsTzedukah = () => { 
+  setCount(0-edit2);
+  setEdit(false)
+}  
+
+
+let cal = '';
+if (edit2 === count) {
+  cal = handleSave();
+}
+
+
+const saveAsMaaser = () => { 
+  setCount(edit2);
+  setEdit(false)
+}
+
  
   return (
     <div className="container">
-    <h1 className="title">מעשר חשבון</h1>
+    <h1 className="title" >מעשר חשבון</h1><div id = 'lockid' className = {lock}>
     <div className="button-container">
       <button className="tzedukah-button" onClick={() =>  {
     setCount((count) => count - money);
@@ -71,11 +110,17 @@ function App() {
          setMoney('');}}>
         מעשר
       </button>
+      
     </div>
-    <p id="feedbackid" className={feedbackCss}>
-      {feedback} {accounting.formatMoney(result, '$')}
-    </p>
-    <div>
+    <br /><div className='buttonp'>
+    <button className='edit-button'
+    onClick = {() => handleEdit()}
+    >
+      edit
+    </button>
+    <p id="feedbackid" className={feedbackCss}>{feedback} {fund}
+    </p></div>
+    <div><br />
     <button className="save-button" onClick={handleSave}>
       save
     </button>
@@ -88,14 +133,37 @@ function App() {
     >
       reset
     </button>
+
     </div>
   </div>
+
+    {edit && (<div className='popup'>
+      <input
+      type="number"
+      onChange={(e) => setEdit2(e.target.value)}
+      placeholder="Enter your own number"
+      className="edit-input"
+      /> 
+      
+     
+      <button className='cancel'
+      onClick = {() => setEdit(false)}
+      >cancel</button>
+      <div> <br />
+      <button className='sat'
+  onClick = {() => {saveAsTzedukah() 
+  }}
+  
+      >save as צדקה
+      </button>
+      <button className='sam'
+      onClick = {() => saveAsMaaser()}
+      >save as מעשר
+      </button></div></div>)}
+    </div>
+  
 );
 }
 ;
 
-
 export default App
-
-
-

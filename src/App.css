@@ -113,7 +113,8 @@
 
 
 
-.maaserCss{font-size: 1.5em;
+.maaserCss{
+  font-size: 1.5em;
   margin: 20px 0;
   color: #d21730;
   font-family: narkism;
@@ -129,6 +130,60 @@
   margin: 20px 0;
   color: #fff;
 }
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.edit-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 138px;
+  -moz-appearance: textfield;
+}
+
+.edit-input::-webkit-outer-spin-button,
+.edit-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sam{ 
+  background-color: #d21730;
+  color: #fff;
+  margin-left: 5px;
+}
 
 
+.sat{
+  background-color: #0d7d6d;
+  color: #fff;
+}
+.cancel{
+  color: #0e46be;
+  border-color: #0e46be;
+  border-width: 1px ;
+  margin-left: 27px;
+}
+.buttonp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.edit-button{
+  background-color: #0e46be;
+  color: #fff;
+  margin-right: 30px; 
+}
+
+.lock {
+  pointer-events: none;
+}
