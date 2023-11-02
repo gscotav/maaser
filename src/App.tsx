@@ -116,13 +116,13 @@ const saveAsMaaser = () => {
     <button className='edit-button'
     onClick = {() => handleEdit()}
     >
-      edit
+      Edit
     </button>
     <p id="feedbackid" className={feedbackCss}>{feedback} {fund}
     </p></div>
     <div><br />
     <button className="save-button" onClick={handleSave}>
-      save
+      Save
     </button>
     <button
       className="reset-button"
@@ -131,7 +131,7 @@ const saveAsMaaser = () => {
           {handleReset();}
       }}
     >
-      reset
+      Reset
     </button>
 
     </div>
