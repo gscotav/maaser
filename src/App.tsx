@@ -148,17 +148,17 @@ const saveAsMaaser = () => {
      
       <button className='cancel'
       onClick = {() => setEdit(false)}
-      >cancel</button>
+      >Cancel</button>
       <div> <br />
       <button className='sat'
   onClick = {() => {saveAsTzedukah() 
   }}
   
-      >save as צדקה
+      >Save as צדקה
       </button>
       <button className='sam'
       onClick = {() => saveAsMaaser()}
-      >save as מעשר
+      >Save as מעשר
       </button></div></div>)}
     </div>
   
