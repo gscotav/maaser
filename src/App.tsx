@@ -71,20 +71,25 @@ if (0-edit2) {
 
 
 const saveAsTzedukah = () => { 
+  if (edit2 !== ''){
   setCount(0-edit2);
   setEdit(false)
-}  
+}  }
 
 
 let cal = '';
 if (edit2 === count) {
   cal = handleSave();
+  
 }
 
 
 const saveAsMaaser = () => { 
+  if (edit2 !== ''){
   setCount(edit2);
-  setEdit(false)
+  
+  setEdit(false)}
+  
 }
 
  
