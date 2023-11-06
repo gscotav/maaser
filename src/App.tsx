@@ -21,7 +21,7 @@ function App() {
   const [saver, setSaver] = useState(false)
 
   const handleMaaser = () => {
-         setCount((count) => count + money / 10);
+         setCount((count) => money / 10 + count);
         setMoney('');
         setEdit2('')
   }
@@ -100,8 +100,8 @@ if (edit2 === count) {
 const saveAsMaaser = () => { 
   if (edit2 !== ''){
   setCount(edit2);
-  window.location.reload();
-  
+  //window.location.reload();
+  setEdit(false)
 };
   
   
