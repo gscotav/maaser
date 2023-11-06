@@ -12,9 +12,20 @@ function App() {
 
   const [count, setCount] = useState(initialResult);
   const [money, setMoney] = useState('');
+  const [money2, setMoney2] = useState('');
   const [edit, setEdit] = useState(false);   
   const [edit2, setEdit2] = useState('')
+
+  
+
   const [saver, setSaver] = useState(false)
+
+  const handleMaaser = () => {
+         setCount((count) => count + money / 10);
+        setMoney('');
+        setEdit2('')
+  }
+
 
   let feedback = '';
   let feedbackCss = '';                                                                                         
@@ -61,12 +72,13 @@ if (edit !== false) {
 
   const handleEdit = () => { 
   setEdit(true)
-
+setEdit2('')
 } 
 
 let timer = '';
 if (0-edit2) {
   timer = handleSave();
+  
 }
 
 
@@ -74,6 +86,7 @@ const saveAsTzedukah = () => {
   if (edit2 !== ''){
   setCount(0-edit2);
   setEdit(false)
+  
 }  }
 
 
@@ -87,8 +100,10 @@ if (edit2 === count) {
 const saveAsMaaser = () => { 
   if (edit2 !== ''){
   setCount(edit2);
+  window.location.reload();
   
-  setEdit(false)}
+};
+  
   
 }
 
@@ -111,8 +126,8 @@ const saveAsMaaser = () => {
         type="number"
       />
       <button className="maaser-button" onClick={() => {
-         setCount((count) => count + money / 10);
-         setMoney('');}}>
+        handleMaaser();
+        }}>
         מעשר
       </button>
       
@@ -155,6 +170,7 @@ const saveAsMaaser = () => {
       onClick = {() => setEdit(false)}
       >Cancel</button>
       <div> <br />
+
       <button className='sat'
   onClick = {() => {saveAsTzedukah() 
   }}
