@@ -22,7 +22,7 @@ function App() {
 
   const handleMaaser = () => {
          setCount((count) => money / 10 + count);
-        setMoney('');
+        
         setEdit2('')
   }
 
@@ -71,8 +71,9 @@ if (edit !== false) {
   };
 
   const handleEdit = () => { 
-  setEdit(true)
-setEdit2('')
+  setEdit(true);
+setEdit2('');
+setMoney('')
 } 
 
 let timer = '';
@@ -101,7 +102,8 @@ const saveAsMaaser = () => {
   if (edit2 !== ''){
   setCount(edit2);
   //window.location.reload();
-  setEdit(false)
+  setEdit(false);
+  setMoney('')
 };
   
   
@@ -159,6 +161,7 @@ const saveAsMaaser = () => {
 
     {edit && (<div className='popup'>
       <input
+      value={edit2}
       type="number"
       onChange={(e) => setEdit2(e.target.value)}
       placeholder="Enter your own number"
