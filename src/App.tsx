@@ -22,7 +22,7 @@ function App() {
 
   const handleMaaser = () => {
          setCount((count) => money / 10 + count);
-        
+        setMoney('');
         setEdit2('')
   }
 
@@ -55,6 +55,7 @@ if (edit !== false) {
 
   const handleSave = () => {
     localStorage.setItem('count', count.toString());
+  
   };
 
   
@@ -67,11 +68,12 @@ if (edit !== false) {
  
   const handleReset = () => {
     setCount(0);
-    setSaver(true)
+    setSaver(true);
+    setMoney('')
   };
 
   const handleEdit = () => { 
-  setEdit(true);
+  setEdit(true)
 setEdit2('');
 setMoney('')
 } 
@@ -127,16 +129,14 @@ const saveAsMaaser = () => {
         className="money-input"
         type="number"
       />
-      <button className="maaser-button" onClick={() => {
-        handleMaaser();
-        }}>
+      <button className="maaser-button" onClick={handleMaaser}>
         מעשר
       </button>
       
     </div>
     <br /><div className='buttonp'>
     <button className='edit-button'
-    onClick = {() => handleEdit()}
+    onClick = {handleEdit}
     >
       Edit
     </button>
@@ -175,13 +175,11 @@ const saveAsMaaser = () => {
       <div> <br />
 
       <button className='sat'
-  onClick = {() => {saveAsTzedukah() 
-  }}
-  
+  onClick = {saveAsTzedukah}
       >Save as צדקה
       </button>
       <button className='sam'
-      onClick = {() => saveAsMaaser()}
+      onClick = {saveAsMaaser}
       >Save as מעשר
       </button></div></div>)}
     </div>
