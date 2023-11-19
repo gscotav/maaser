@@ -21,7 +21,7 @@ function App() {
   const [saver, setSaver] = useState(false)
 
   const handleMaaser = () => {
-         setCount((count) => money / 10 + count);
+         setCount((count) => money / 10 + (count));
         setMoney('');
         setEdit2('')
   }
